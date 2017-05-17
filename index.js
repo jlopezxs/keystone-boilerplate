@@ -8,8 +8,8 @@ var swig = require('swig');
 swig.setDefaults({ cache: false });
 
 keystone.init({
-	'name': 'My Site',
-	'brand': 'My Site',
+	'name': 'Keystone Boilerplate',
+	'brand': 'Keystone Boilerplate',
 	'sass': 'client/public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
