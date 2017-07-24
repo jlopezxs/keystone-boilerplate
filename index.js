@@ -1,3 +1,5 @@
+require('dotenv').load();
+
 const packageJSON = require('./package.json');
 
 require('babel-register')(packageJSON['babel-server']);
@@ -10,7 +12,6 @@ swig.setDefaults({ cache: false });
 keystone.init({
 	'name': 'Keystone Boilerplate',
 	'brand': 'Keystone Boilerplate',
-	'sass': 'client/public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'client/templates/views',

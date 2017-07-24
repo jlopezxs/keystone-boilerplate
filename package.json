@@ -1,12 +1,12 @@
 {
   "name": "keystone-boilerplate",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "dependencies": {
-    "async": "^2.4.0",
-    "axios": "^0.16.1",
-    "axios-retry": "^1.2.0",
+    "async": "^2.5.0",
+    "axios": "^0.16.2",
+    "axios-retry": "^2.0.1",
     "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.4.0",
+    "babel-preset-env": "^1.6.0",
     "babel-register": "^6.24.1",
     "bcrypt-nodejs": "^0.0.3",
     "blister": "^1.1.0",
@@ -15,7 +15,7 @@
     "easy-login": "^1.0.0",
     "keystone": "^4.0.0-beta.5",
     "lodash": "^4.17.4",
-    "require-dir": "^0.3.1",
+    "require-dir": "^0.3.2",
     "restful-keystone": "^0.3.0",
     "swig": "^1.4.2"
   },
@@ -23,11 +23,15 @@
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
     "node-dev": "^3.1.3",
-    "rollup": "^0.41.6",
+    "rollup": "^0.45.2",
     "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-sass": "^0.5.2"
+    "rollup-plugin-sass": "^0.5.3",
+    "rollup-plugin-uglify": "^2.0.1",
+    "lint-staged": "^4.0.2",
+    "husky": "^0.14.3",
+    "prettier": "^1.5.3",
+    "onchange": "^3.2.1"
   },
   "babel": {
     "presets": [
@@ -47,9 +51,18 @@
     ]
   },
   "scripts": {
-    "start": "node-dev --respawn --no-notify --no-deps --inspect=0.0.0.0:5858 index.js",
+    "precommit": "lint-staged",
+    "start": "node index.js",
+    "develop": "npm run develop:server",
+    "develop:server": "node-dev --respawn --no-notify --no-deps --inspect=0.0.0.0:5858 index.js",
     "build": "rollup -c",
-    "develop": "rollup -c -w"
+    "develop:client": "onchange 'client/**/*' -i -- npm run build"
+  },
+  "lint-staged": {
+    "server/**/*.js": [
+      "node_modules/.bin/prettier --single-quote 'server/**/*.js' --write",
+      "git add"
+    ]
   },
   "main": "index.js"
 }
