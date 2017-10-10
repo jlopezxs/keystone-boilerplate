@@ -6,17 +6,13 @@ require('babel-register')(packageJSON['babel-server']);
 require('babel-polyfill');
 
 var keystone = require('keystone');
-var swig = require('swig');
-swig.setDefaults({ cache: false });
 
 keystone.init({
 	'name': 'Keystone Boilerplate',
 	'brand': 'Keystone Boilerplate',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
-	'views': 'client/templates/views',
-	'view engine': 'swig',
-	'custom engine': swig.renderFile,
+	'views': 'client/templates',
 	'logger': ':method :url :status :response-time ms - :res[content-length]',
 	'auto update': true,
 	'session': true,

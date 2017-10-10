@@ -4,7 +4,7 @@ networks:
 services:
   server:
     build: .
-    command: npm start
+    command: yarn run develop
     ports:
       # Application
       - 3000:3000

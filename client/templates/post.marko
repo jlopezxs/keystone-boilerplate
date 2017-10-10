@@ -1,0 +1,50 @@
+$ {
+	const { data } = input;
+}
+
+<alt-layout>
+	<@content>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+				<article>
+					<p>
+						<a href="${helper.getUrl('blog')}">&larr; back to the blog</a>
+					</p>
+					<hr>
+					<if(!data.post)>
+						<h2>Invalid Post.</h2>
+					</if>
+					<else>
+						<header>
+							<h1>${data.post.title}</h1>
+							<h5>Posted</h5>
+							<if(data.post.publishedDate)>
+								on ${data.post._.publishedDate.format("MMMM Do, YYYY")}
+							</if>
+							<if(data.post.categories && data.post.categories.length)>
+								in
+								<for(cat in data.post.categories | status-var=loop)>
+									<a href="${helper.getUrl('blog', { categorySlug: cat.key })}">${cat.name}</a>
+									<if(loop.getIndex() < data.post.categories.length - 1>)>, </if>
+								</for>
+							</if>
+							<if(data.post.author)>
+								by ${data.post.author.name.first}
+							</if>
+						</header>
+						<div class="post">
+							<if(data.post.image.exists)>
+								<div class="image-wrap">
+									<img src="${data.post._.image.fit(750,450)}" class="img-responsive">
+								</div>
+							</if>
+							$!{data.post.content.full}
+						</div>
+					</else>
+				</article>
+			</div>
+		</div>
+	</div>
+	</@content>
+</alt-layout>

@@ -1,17 +1,16 @@
-FROM node:6.10-alpine
+FROM node:8.5-alpine
 
 RUN apk add --no-cache --virtual build-deps make gcc g++ python curl
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 
 WORKDIR /keystone_boilerplate
 
-COPY .npmrc yarn.lock package.json ./
+COPY yarn.lock package.json ./
 
-RUN npm install
+RUN yarn install
 
 COPY . .
 
-RUN npm run build
+RUN yarn run build
 
 EXPOSE 3000
 

@@ -1,0 +1,96 @@
+class {
+	onClick() {
+		alert('test')
+	}
+}
+
+$ {
+	const { title, navLinks } = input;
+}
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>${ title || "Keystone Boilerplate" }</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+		<!--Customise the stylesheet for your site by editing /public/styles/site.sass -->
+		<link href="/styles/bundle.css" rel="stylesheet">
+
+		<!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		   Safely remove this block if you are not targeting IE8 -->
+		<!--[if lt IE 9]>
+			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
+			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<!--Include template-specific stylesheets by extending the css block -->
+		<include(input.css)/>
+
+		<!--Add any other template-specific HEAD tags by extending the head block -->
+		<include(input.head)/>
+	</head>
+	<body>
+
+		<!--HEADER -->
+		 <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+		   <a class="navbar-item" on-click('onClick')>
+		     <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+		   </a>
+
+		   <div class="navbar-item has-dropdown">
+		     <a class="navbar-link">
+		       Docs
+		     </a>
+
+		     <div class="navbar-dropdown">
+		       <a class="navbar-item">
+		         Overview
+		       </a>
+		       <a class="navbar-item">
+		         Elements
+		       </a>
+		       <a class="navbar-item">
+		         Components
+		       </a>
+		       <hr class="navbar-divider">
+		       <div class="navbar-item">
+		         Version 0.5.3
+		       </div>
+		     </div>
+		   </div>
+		 </nav>
+
+		<!--BODY -->
+		<div id="body">
+			<!--NOTE:
+			   There is no .container wrapping class around body blocks to allow more flexibility in design.
+			   Remember to include it in your templates when you override the intro and content blocks! -->
+
+			<!--The content block should contain the body of your template"s content -->
+			<include(input.content)/>
+		</div>
+
+		<!--FOOTER -->
+		<footer class="footer">
+		  <div class="container">
+		    <div class="content has-text-centered">
+					<!--You don"t _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it! -->
+					<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
+				</div>
+		 </div>
+		</footer>
+
+		<!--JAVASCRIPT -->
+		<script src="/js/bundle.js"></script>
+
+		<!--Add scripts that are globally required by your site here. -->
+
+		<!--Include template-specific javascript files by extending the js block -->
+		<include(input.js)/>
+	</body>
+</html>
