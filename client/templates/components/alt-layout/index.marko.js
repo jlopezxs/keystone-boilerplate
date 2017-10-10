@@ -51,7 +51,7 @@ function render(input, out, __component, component, state) {
     marko_attr("data-marko", {
       onclick: __component.d("onClick")
     }, false) +
-    "><img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\"></a><div class=\"navbar-item has-dropdown\"><a class=\"navbar-link\">Docs</a><div class=\"navbar-dropdown\"><a class=\"navbar-item\">Overview</a><a class=\"navbar-item\">Elements</a><a class=\"navbar-item\">Components</a><hr class=\"navbar-divider\"><div class=\"navbar-item\">Version 0.5.3</div></div></div></nav>");
+    ">Keystone Boilerplate</a><a class=\"navbar-item\">Blog</a><a class=\"navbar-item\">Contact</a></nav>");
 
   var __componentId0 = "body";
 

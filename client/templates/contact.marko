@@ -1,0 +1,74 @@
+$ {
+	const { enquirySubmitted, validationErrors = {}, formData, enquiryTypes } = input;
+}
+
+<alt-layout>
+	<@content>
+		<div class="container">
+			<if(enquirySubmitted)>
+				<h3>Thanks for getting in touch.</h3>
+			</if>
+			<else>
+				<div class="columns">
+					<div class="column is-one-quarter">
+						<form method="post">
+							<input type="hidden" name="action" value="contact"/>
+
+							<div class="field">
+							  <label class="label">Name</label>
+							  <div class="control">
+							    <input class=["input", validationErrors.name && "is-danger"] type="text"  name="name.full" value=formData['name.full']>
+							  </div>
+							</div>
+
+							<div class="field">
+							  <label class="label">Email</label>
+							  <div class="control">
+							    <input class=["input", validationErrors.email && "is-danger"] type="email" name="email" value=formData.email>
+							  </div>
+							</div>
+
+							<div class="field">
+							  <label class="label">Phone</label>
+							  <div class="control">
+							    <input class=["input", validationErrors.phone && "is-danger"] placeholder="(optional)" type="phone" name="phone" value=formData.phone>
+							  </div>
+							</div>
+
+
+							<div class="field">
+								<label class="label">Type</label>
+							  <div class="control">
+							    <div class="select">
+										<select name="enquiryType" class="form-control">
+											<option value="">(select one)</option>
+											<for(type in enquiryTypes)>
+												<option value="${type.value}"
+													${formData.enquiryType === type.value ? "selected" : ""}>
+													${type.label}
+												</option>
+											</for>
+										</select>
+							    </div>
+							  </div>
+							</div>
+
+							<div class="field">
+								<label class="label">Message</label>
+							  <div class="control">
+									<textarea name="message" class="textarea" placeholder="Leave us a message..." rows="4">
+									${formData.message}
+									</textarea>
+							  </div>
+							</div>
+
+							<div class="form-actions">
+								<button type="submit" class="button is-primary">Send</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</else>
+		</div>
+	</@content>
+</alt-layout>

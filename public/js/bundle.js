@@ -4694,7 +4694,7 @@ var marko_template = module.exports = vdom.t(), marko_component = {
         }
     }, marko_registerComponent = helpersBrowser.rc, marko_componentType = marko_registerComponent('/keystone-boilerplate$0.0.5/client/templates/components/alt-layout/index.marko', function () {
         return module.exports;
-    }), marko_renderer = helpersBrowser.r, marko_defineComponent = helpersBrowser.c, marko_loadTag = helpers_1.t, include_tag = marko_loadTag(includeTag_1), component_globals_tag = marko_loadTag(componentGlobalsTagBrowser), include_tag2 = marko_loadTag(includeTagBrowser), init_components_tag = marko_loadTag(initComponentsTagBrowser), await_reorderer_tag = marko_loadTag(noopRender), marko_createElement = helpers_1.e, marko_const = helpers_1.const, marko_const_nextId = marko_const('d0cd99'), marko_node0 = marko_createElement('META', { charset: 'utf-8' }, 0, 0, { c: marko_const_nextId() }), marko_node1 = marko_createElement('META', {
+    }), marko_renderer = helpersBrowser.r, marko_defineComponent = helpersBrowser.c, marko_loadTag = helpers_1.t, include_tag = marko_loadTag(includeTag_1), component_globals_tag = marko_loadTag(componentGlobalsTagBrowser), include_tag2 = marko_loadTag(includeTagBrowser), init_components_tag = marko_loadTag(initComponentsTagBrowser), await_reorderer_tag = marko_loadTag(noopRender), marko_createElement = helpers_1.e, marko_const = helpers_1.const, marko_const_nextId = marko_const('5df8d2'), marko_node0 = marko_createElement('META', { charset: 'utf-8' }, 0, 0, { c: marko_const_nextId() }), marko_node1 = marko_createElement('META', {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1.0'
     }, 0, 0, { c: marko_const_nextId() }), marko_node2 = marko_createElement('META', {
@@ -4714,12 +4714,7 @@ var marko_template = module.exports = vdom.t(), marko_component = {
     }, marko_node5 = marko_createElement('FOOTER', { 'class': 'footer' }, 1, 0, { c: marko_const_nextId() }).e('DIV', { 'class': 'container' }, 1).e('DIV', { 'class': 'content has-text-centered' }, 1).e('P', null, 3).t('Powered by ').e('A', {
         href: 'http://keystonejs.com',
         target: '_blank'
-    }, 1).t('KeystoneJS').t('.'), marko_node6 = marko_createElement('SCRIPT', { src: '/js/bundle.js' }, 0, 0, { c: marko_const_nextId() }), marko_attrs1 = { 'class': 'navbar-item' }, marko_node7 = marko_createElement('DIV', { 'class': 'navbar-item has-dropdown' }, 2, 0, { c: marko_const_nextId() }).e('A', { 'class': 'navbar-link' }, 1).t('Docs').e('DIV', { 'class': 'navbar-dropdown' }, 5).e('A', { 'class': 'navbar-item' }, 1).t('Overview').e('A', { 'class': 'navbar-item' }, 1).t('Elements').e('A', { 'class': 'navbar-item' }, 1).t('Components').e('HR', { 'class': 'navbar-divider' }, 0).e('DIV', { 'class': 'navbar-item' }, 1).t('Version 0.5.3'), marko_node8 = marko_createElement('IMG', {
-        src: 'http://bulma.io/images/bulma-logo.png',
-        alt: 'Bulma: a modern CSS framework based on Flexbox',
-        width: '112',
-        height: '28'
-    }, 0, 0, { c: marko_const_nextId() });
+    }, 1).t('KeystoneJS').t('.'), marko_node6 = marko_createElement('SCRIPT', { src: '/js/bundle.js' }, 0, 0, { c: marko_const_nextId() }), marko_attrs1 = { 'class': 'navbar-item' }, marko_node7 = marko_createElement('A', { 'class': 'navbar-item' }, 1, 0, { c: marko_const_nextId() }).t('Blog'), marko_node8 = marko_createElement('A', { 'class': 'navbar-item' }, 1, 0, { c: marko_const_nextId() }).t('Contact');
 function render(input, out, __component, component, state) {
     var data = input;
     const {title, navLinks} = input;
@@ -4737,7 +4732,7 @@ function render(input, out, __component, component, state) {
     out.ee();
     out.be('BODY');
     component_globals_tag({}, out);
-    out.e('NAV', marko_attrs0, 2).e('A', marko_attrs1, 1, 0, { onclick: __component.d('onClick') }).n(marko_node8).n(marko_node7);
+    out.e('NAV', marko_attrs0, 3).e('A', marko_attrs1, 1, 0, { onclick: __component.d('onClick') }).t('Keystone Boilerplate').n(marko_node7).n(marko_node8);
     var __componentId0 = 'body';
     out.be('DIV', { id: __componentId0 }, null, 4);
     include_tag2({
@@ -4759,25 +4754,12 @@ marko_template.Component = marko_defineComponent(marko_component, marko_template
 
 var templates = createCommonjsModule(function (module) {
 'use strict';
-var marko_template = module.exports = vdom.t(), marko_loadTag = helpers_1.t, alt_layout_tag = marko_loadTag(altLayout), marko_createElement = helpers_1.e, marko_const = helpers_1.const, marko_const_nextId = marko_const('76bdfc'), marko_node0 = marko_createElement('SECTION', { 'class': 'hero is-primary' }, 1, 0, { c: marko_const_nextId() }).e('DIV', { 'class': 'hero-body container' }, 6).e('H1', { 'class': 'title' }, 1).t('Welcome').e('P', { 'class': 'subtitle' }, 3).t('This is your new ').e('A', {
-        href: 'http://keystonejs.com',
-        target: '_blank'
-    }, 1).t('KeystoneJS').t(' website.').e('P', null, 5).t('It includes the latest versions of ').e('A', {
-        href: 'http://bulma.io/',
-        target: '_blank'
-    }, 1).t('Bulma').t(' and ').e('A', {
-        href: 'http://www.jquery.com/',
-        target: '_blank'
-    }, 1).t('jQuery').t('.').e('P', null, 3).t('Visit the ').e('A', {
-        href: 'http://keystonejs.com/guide',
-        target: '_blank'
-    }, 1).t('Getting Started').t(' guide to learn how to customise it.').e('HR', null, 0).e('P', null, 5).t('Remember to ').e('A', {
-        href: 'https://github.com/keystonejs/keystone',
-        target: '_blank'
-    }, 1).t('Star KeystoneJS on GitHub').t(' and ').e('A', {
-        href: 'https://twitter.com/keystonejs',
-        target: '_blank'
-    }, 1).t('follow @keystonejs').t(' on twitter for updates.');
+var marko_template = module.exports = vdom.t(), marko_loadTag = helpers_1.t, alt_layout_tag = marko_loadTag(altLayout), marko_createElement = helpers_1.e, marko_const = helpers_1.const, marko_const_nextId = marko_const('701893'), marko_node0 = marko_createElement('SECTION', { 'class': 'hero is-primary is-medium is-bold' }, 1, 0, { c: marko_const_nextId() }).e('DIV', { 'class': 'hero-body container has-text-centered' }, 5).e('IMG', {
+        src: 'http://keystonejs.com/images/logo-inverted.svg',
+        alt: 'KeystoneJS',
+        width: '80',
+        height: '81'
+    }, 0).e('H1', { 'class': 'title' }, 1).t('Node.js CMS & Web Application Platform').e('P', { 'class': 'subtitle' }, 1).t('The open source framework for developing database-driven websites, applications and APIs in Node.js. Built on Express and MongoDB.').e('A', { 'class': 'button is-white is-large is-primary is-inverted' }, 1).t('GET STARTED').e('A', { 'class': 'button is-outlined is-large is-primary is-inverted' }, 1).t('Try the demo');
 function render(input, out) {
     var data = input;
     alt_layout_tag({

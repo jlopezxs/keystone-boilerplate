@@ -15,7 +15,7 @@ function render(input, out) {
   alt_layout_tag({
       content: {
           renderBody: function renderBody(out) {
-            out.w("<section class=\"hero is-primary\"><div class=\"hero-body container\"><h1 class=\"title\">Welcome</h1><p class=\"subtitle\">This is your new <a href=\"http://keystonejs.com\" target=\"_blank\">KeystoneJS</a> website.</p><p>It includes the latest versions of <a href=\"http://bulma.io/\" target=\"_blank\">Bulma</a> and <a href=\"http://www.jquery.com/\" target=\"_blank\">jQuery</a>.</p><p>Visit the <a href=\"http://keystonejs.com/guide\" target=\"_blank\">Getting Started</a> guide to learn how to customise it.</p><hr><p>Remember to <a href=\"https://github.com/keystonejs/keystone\" target=\"_blank\">Star KeystoneJS on GitHub</a> and <a href=\"https://twitter.com/keystonejs\" target=\"_blank\">follow @keystonejs</a> on twitter for updates.</p></div></section>");
+            out.w("<section class=\"hero is-primary is-medium is-bold\"><div class=\"hero-body container has-text-centered\"><img src=\"http://keystonejs.com/images/logo-inverted.svg\" alt=\"KeystoneJS\" width=\"80\" height=\"81\"><h1 class=\"title\">Node.js CMS & Web Application Platform</h1><p class=\"subtitle\">The open source framework for developing database-driven websites, applications and APIs in Node.js. Built on Express and MongoDB.</p><a class=\"button is-white is-large is-primary is-inverted\">GET STARTED</a><a class=\"button is-outlined is-large is-primary is-inverted\">Try the demo</a></div></section>");
           }
         },
       [hasRenderBodyKey]: true
