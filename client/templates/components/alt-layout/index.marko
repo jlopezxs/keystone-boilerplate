@@ -6,6 +6,7 @@ class {
 
 $ {
 	const { title, navLinks } = input;
+console.log('NAVLINKS', navLinks)
 }
 
 <!doctype html>
@@ -40,13 +41,12 @@ $ {
 		 <nav class="navbar" role="navigation" aria-label="dropdown navigation">
 		   <a class="navbar-item" on-click('onClick')>
 				 Keystone Boilerplate
-			</a>
-		   <a class="navbar-item">
-		       Blog
+			</a>ddddddddddddddd
+			<for(navLink in navLinks)>
+		   <a class="navbar-item" href=navLink.href>
+		       ${navLink.label}
 		   </a>
-			 <a class="navbar-item">
-		       Contact
-		   </a>
+			 </for>
 		 </nav>
 
 		<!--BODY -->

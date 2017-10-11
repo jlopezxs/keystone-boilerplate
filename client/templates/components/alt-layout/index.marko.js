@@ -20,6 +20,7 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
     include_tag = marko_loadTag(require("marko/src/taglibs/core/include-tag")),
     component_globals_tag = marko_loadTag(require("marko/src/components/taglib/component-globals-tag")),
     marko_attr = marko_helpers.a,
+    marko_forEach = marko_helpers.f,
     include_tag2 = marko_loadTag(require("marko/src/components/taglib/include-tag")),
     init_components_tag = marko_loadTag(require("marko/src/components/taglib/init-components-tag")),
     await_reorderer_tag = marko_loadTag(require("marko/src/taglibs/async/await-reorderer-tag"));
@@ -28,6 +29,7 @@ function render(input, out, __component, component, state) {
   var data = input;
 
   const { title, navLinks } = input;
+  console.log('NAVLINKS', navLinks)
 
   out.w("<!doctype html><html" +
     marko_attr("id", __component.id) +
@@ -51,7 +53,17 @@ function render(input, out, __component, component, state) {
     marko_attr("data-marko", {
       onclick: __component.d("onClick")
     }, false) +
-    ">Keystone Boilerplate</a><a class=\"navbar-item\">Blog</a><a class=\"navbar-item\">Contact</a></nav>");
+    ">Keystone Boilerplate</a>ddddddddddddddd ");
+
+  marko_forEach(navLinks, function(navLink) {
+    out.w("<a class=\"navbar-item\"" +
+      marko_attr("href", navLink.href) +
+      ">" +
+      marko_escapeXml(navLink.label) +
+      "</a>");
+  });
+
+  out.w("</nav>");
 
   var __componentId0 = "body";
 

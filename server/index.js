@@ -3,7 +3,6 @@ import RestfulKeystone from 'restful-keystone';
 import getMiddlewares from './middleware';
 import container from './container';
 import getHelpers from './helpers';
-import marko from 'express-marko';
 
 const restfulKeystone = RestfulKeystone(keystone);
 const helper = getHelpers(container);
@@ -12,12 +11,11 @@ const middleware = getMiddlewares(container);
 function getController({ name, method }) {
   return container.get(name)[method].bind(container.get(name));
 }
-
+console.log(process.env);
 exports = module.exports = app => {
   /**
    * Insert helpers in views
    */
-  keystone.app.use(marko);
   keystone.app.use((req, res, next) => {
     res.locals = Object.assign({}, res.locals, { helper });
     next();

@@ -11,7 +11,7 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
     marko_attrs = marko_helpers.as,
     hasRenderBodyKey = Symbol.for("hasRenderBody"),
     marko_loadTemplate = require("marko/src/runtime/helper-loadTemplate"),
-    alt_layout_template = marko_loadTemplate(require.resolve("./components/alt-layout")),
+    alt_layout_template = marko_loadTemplate(require.resolve("./components/alt-layout/index.marko")),
     marko_loadTag = marko_helpers.t,
     alt_layout_tag = marko_loadTag(alt_layout_template);
 
@@ -77,6 +77,6 @@ marko_template._ = render;
 
 marko_template.meta = {
     tags: [
-      "./components/alt-layout"
+      "./components/alt-layout/index.marko"
     ]
   };
